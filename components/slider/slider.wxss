@@ -1,0 +1,67 @@
+/* 588rpx max 160rpx min */
+.progress-root-container {
+  display: flex;
+  flex-direction: row;
+  width: 710rpx;
+  align-items: center;
+  height: 68rpx;
+}
+
+.text {
+  font-size: 28rpx;
+  color: #333;
+  position: absolute;
+  left: 40rpx;
+  font-weight: 700;
+}
+
+.symbol-min {
+  position: absolute;
+  left: 165rpx;
+  height: 12rpx;
+  line-height: 4rpx;
+  z-index: 10;
+}
+.symbol-max {
+  position: absolute;
+  left: 650rpx;
+  height: 12rpx;
+  line-height: 4rpx;
+  z-index: 10;
+}
+
+.progress-max {
+  position: absolute;
+  left: 192rpx;
+  height: 12rpx;
+  width: 450rpx;
+  background: #d8d8d8;
+  border-radius: 30rpx;
+  z-index: 10;
+}
+
+.progress-current {
+  position: absolute;
+  left: 192rpx;
+  height: 12rpx;
+  width: 428rpx;
+  background: #59B0FF;
+  border-radius: 30rpx;
+  z-index: 20;
+}
+
+.pencent-text {
+  font-size: 28rpx;
+  color: #59b0ff;
+  left: 680rpx;
+  position: absolute;
+  z-index: 20;
+}
+
+.slice-button {
+  left: 588rpx;
+  width: 68rpx;
+  height: 68rpx;
+  position: absolute;
+  z-index: 30;
+}

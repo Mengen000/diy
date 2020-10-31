@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="custom">
+    <image src="../../image/bg.jpg" style="width:{{bgImgInfo.bgImgW}}rpx;height:{{bgImgInfo.bgImgH}}rpx"></image>
+    <view class="uploader" style='width:{{upInfo.upW}}rpx; height:{{upInfo.upH}}rpx;top:{{upInfo.upT}}rpx;left:{{upInfo.upL}}rpx'>
+      <!-- <image bindtap='dragImg' wx:if="{{isUpload}}" class="img" src='{{upImgInfo.imgPath}}' style="width:{{upImgInfo.imgW}}rpx;height:{{upImgInfo.imgH}}rpx;transform:rotate({{upImgInfo.angle}}deg);top:{{upImgInfo.imgTop}}rpx;left:{{upImgInfo.imgLeft}}rpx;filter:contrast({{contrast}}%) brightness({{brightness}}%);" bindtouchstart='dragtouchStart' bindtouchmove='dragtouchMove' bindtouchend='dragtouchEnd'></image> -->
+      <image bindtap='dragImg' wx:if="{{isUpload}}" class="img" src='{{upImgInfo.imgPath}}' style="width:{{upImgInfo.imgW}}rpx;height:{{upImgInfo.imgH}}rpx;transform:rotate({{upImgInfo.angle}}deg);top:{{upImgInfo.imgTop}}rpx;left:{{upImgInfo.imgLeft}}rpx;filter:contrast({{contrast}}%) brightness({{brightness}}%);"></image>
+      <view class='up' wx:else bindtap='upload' ></view>
+    </view>
+  </view>
+  <view class="slider">
+    <view class="btn-group">
+      <view class="btn-item" bindtap="zoomIn">
+        <image src="../../image/in.png"></image>
+        <text>放大</text>
+      </view>
+      <view class="btn-item" bindtap="zoomOut">
+        <image src="../../image/out.png"></image>
+        <text>缩小</text>
+      </view>
+      <view class="btn-item" bindtap="rotating">
+        <image src="../../image/rotate.png"></image>
+        <text>旋转</text>
+      </view>
+      <view class="btn-item" bindtap="againUpLoad">
+        <image src="../../image/rotate.png"></image>
+        <text>重传</text>
+      </view>
+    </view>
+    <view>
+      <slider id="progress1" class="progress-1" canSlide="{{isUpload}}" bindSetBrightness="SetBrightness" currentProgress="50" maxProgress="100"  slideImg="../../image/img1.png" progressName="明度"/>
+    </view>
+    <view>
+      <slider id="contrast" class="contrast" bindSetContrast="SetContrast" currentProgress="50" maxProgress="100" canSlide="{{isUpload}}" slideImg="../../image/img2.png" progressName="对比度"/>
+    </view>
+  </view>
+  <view class="btn" bindtap="openMask">下一步</view>
+</view>
+<view class='canvasWrap' hidden="{{!showCanvas}}">
+  <image class="resImg" style="width:200rpx; height:200rpx;"  src="{{successImg}}" ></image>
+</view>
+<canvas class='maskCanvas' canvas-id="maskCanvas" style='width:{{canvasImgInfo.canvasW}}px; height:{{canvasImgInfo.canvasH}}px;'></canvas>
