@@ -1,6 +1,6 @@
 var startPoint;
-const min = 80;
-const max = 294;
+const min = 90;
+const max = 300;
 Component({
   /**
    * 组件的属性列表
@@ -44,7 +44,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    buttonLeft: 80,
+    buttonLeft: 88,
     progress: 0,
     progressText: 0,
   },

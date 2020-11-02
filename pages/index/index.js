@@ -1,5 +1,6 @@
 const app = getApp()
 const maskCanvas = wx.createCanvasContext('maskCanvas');
+const CanvasB = wx.createCanvasContext('canvasB');
 var phoneInfo = wx.getSystemInfoSync();
 var pWidth = phoneInfo.windowWidth; //宽
 var pHeight = phoneInfo.windowHeight; //高
@@ -48,6 +49,7 @@ Page({
   },
   onLoad: function (options) {
     let that = this;
+    // console.log(phoneInfo)
     // 请求获取背景以及相关信息
     this.getRelated();
   },
@@ -206,6 +208,8 @@ Page({
     let canvasImgInfo = that.data.canvasImgInfo;
     maskCanvas.save();
     maskCanvas.beginPath();
+    CanvasB.save();
+    CanvasB.beginPath();
     //一张白图  可以不画
     maskCanvas.setFillStyle('#fff');
     maskCanvas.fillRect(0, 0, canvasImgInfo.canvasW, canvasImgInfo.canvasH)
@@ -238,13 +242,14 @@ Page({
       success(res) {
         var pData = res.data;
         console.log(pData)
-        for (var i = 0; i < pData.length; i += 10) {
-          pData[i] += 200;
-          pData[i + 1] += 200;
-          pData[i + 2] += 200;
+        for (var i = 0; i < pData.length; i +=2) {
+          pData[i] += pData[i]*0.5;
+          pData[i + 1] += pData[i + 1]*0.5;
+          pData[i + 2] += pData[i + 2]*0.5;
         }
         setTimeout(() => {
           console.log(pData)
+          console.log(upImgInfo)
           const data = new Uint8ClampedArray(pData);
           wx.canvasPutImageData({
             canvasId: 'maskCanvas',
@@ -271,6 +276,9 @@ Page({
             fail(err){
               console.log(err)
               console.log("像素更改失败")
+            },
+            complete(r){
+              console.log(r)
             }
           })
         }, 200)
@@ -279,9 +287,9 @@ Page({
   },
   openMask() {
     this.synthesis();
-    this.setData({
-      showCanvas: true
-    })
+    // this.setData({
+    //   showCanvas: true
+    // })
   },
   // 明亮度
   SetBrightness(e) {

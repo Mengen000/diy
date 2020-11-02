@@ -24,7 +24,7 @@
 }
 .symbol-max {
   position: absolute;
-  left: 650rpx;
+  left: 655rpx;
   height: 12rpx;
   line-height: 4rpx;
   z-index: 10;
@@ -32,7 +32,7 @@
 
 .progress-max {
   position: absolute;
-  left: 192rpx;
+  left: 200rpx;
   height: 12rpx;
   width: 450rpx;
   background: #d8d8d8;
@@ -42,7 +42,7 @@
 
 .progress-current {
   position: absolute;
-  left: 192rpx;
+  left: 200rpx;
   height: 12rpx;
   width: 428rpx;
   background: #59B0FF;
@@ -60,8 +60,8 @@
 
 .slice-button {
   left: 588rpx;
-  width: 68rpx;
-  height: 68rpx;
+  width: 50rpx;
+  height: 50rpx;
   position: absolute;
   z-index: 30;
 }

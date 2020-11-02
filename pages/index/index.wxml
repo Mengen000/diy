@@ -4,7 +4,7 @@
     <image src="../../image/bg.jpg" style="width:{{bgImgInfo.bgImgW}}rpx;height:{{bgImgInfo.bgImgH}}rpx"></image>
     <view class="uploader" style='width:{{upInfo.upW}}rpx; height:{{upInfo.upH}}rpx;top:{{upInfo.upT}}rpx;left:{{upInfo.upL}}rpx'>
       <!-- <image bindtap='dragImg' wx:if="{{isUpload}}" class="img" src='{{upImgInfo.imgPath}}' style="width:{{upImgInfo.imgW}}rpx;height:{{upImgInfo.imgH}}rpx;transform:rotate({{upImgInfo.angle}}deg);top:{{upImgInfo.imgTop}}rpx;left:{{upImgInfo.imgLeft}}rpx;filter:contrast({{contrast}}%) brightness({{brightness}}%);" bindtouchstart='dragtouchStart' bindtouchmove='dragtouchMove' bindtouchend='dragtouchEnd'></image> -->
-      <image bindtap='dragImg' wx:if="{{isUpload}}" class="img" src='{{upImgInfo.imgPath}}' style="width:{{upImgInfo.imgW}}rpx;height:{{upImgInfo.imgH}}rpx;transform:rotate({{upImgInfo.angle}}deg);top:{{upImgInfo.imgTop}}rpx;left:{{upImgInfo.imgLeft}}rpx;filter:contrast({{contrast}}%) brightness({{brightness}}%);"></image>
+      <image bindtap='dragImg' wx:if="{{isUpload}}" class="img" src='{{upImgInfo.imgPath}}' style="width:{{upImgInfo.imgW}}rpx;height:{{upImgInfo.imgH}}rpx;transform:rotate({{upImgInfo.angle}}deg);top:{{upImgInfo.imgTop}}rpx;left:{{upImgInfo.imgLeft}}rpx;filter:contrast({{contrast}}%) brightness(1.5);"></image>
       <view class='up' wx:else bindtap='upload' ></view>
     </view>
   </view>
@@ -35,8 +35,10 @@
     </view>
   </view>
   <view class="btn" bindtap="openMask">下一步</view>
+  <image class="resImg" style="width:160rpx; height:160rpx;"  src="{{successImg}}" ></image>
 </view>
-<view class='canvasWrap' hidden="{{!showCanvas}}">
-  <image class="resImg" style="width:200rpx; height:200rpx;"  src="{{successImg}}" ></image>
-</view>
+<!-- <view class='canvasWrap' hidden="{{!showCanvas}}">
+  <image class="resImg" style="width:160rpx; height:160rpx;"  src="{{successImg}}" ></image>
+</view> -->
 <canvas class='maskCanvas' canvas-id="maskCanvas" style='width:{{canvasImgInfo.canvasW}}px; height:{{canvasImgInfo.canvasH}}px;'></canvas>
+<canvas class='maskCanvas' canvas-id="canvasB" style='width:{{canvasImgInfo.canvasW}}px; height:{{canvasImgInfo.canvasH}}px;'></canvas>

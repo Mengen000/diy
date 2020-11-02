@@ -4,6 +4,6 @@
   <view class="symbol-max">+</view>
   <view class='progress-max'></view>
   <view class='progress-current' style="width:{{2*progress}}rpx"></view>
-  <text class='pencent-text'>{{progressText}}</text>
+  <!-- <text class='pencent-text'>{{progressText}}</text> -->
   <image class='slice-button' src='{{slideImg}}' catchtouchmove="buttonMove" catchtouchstart="buttonStart" catchtouchend="buttonEnd" style="left:{{2*buttonLeft}}rpx"/>
 </view>
